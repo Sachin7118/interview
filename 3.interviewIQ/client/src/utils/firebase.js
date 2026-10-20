@@ -1,8 +1,11 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+const rawApiKey = import.meta.env.VITE_FIREBASE_APIKEY || "AIzaSyDybcTuPbvsTG5J_h6dL127NlkmaVIHf20";
+const cleanApiKey = rawApiKey.replace(/['"]/g, "").trim();
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_APIKEY || "AIzaSyDybcTuPbvsTG5J_h6dL127NlkmaVIHf20",
+  apiKey: cleanApiKey,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "interviewiq-e9cc1.firebaseapp.com",
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "interviewiq-e9cc1",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "interviewiq-e9cc1.firebasestorage.app",
