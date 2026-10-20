@@ -1,0 +1,9 @@
+{
+  "name": "interviewiq-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix 3.interviewIQ/server start",
+    "build": "npm --prefix 3.interviewIQ/client run build"
+  }
+}
